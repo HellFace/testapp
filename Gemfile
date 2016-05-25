@@ -1,18 +1,27 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.8'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails', '2.13.1'
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'guard-rspec'
+  gem 'spork', github: 'sporkrb/spork'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'selenium-webdriver'
+  gem 'capybara'
 end
 
 # Use SCSS for stylesheets
