@@ -2,58 +2,38 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
-  let(:base_title) { "Ruby on Rails" }
+  subject { page }
 
   describe "Home Page" do
-    it "should have the content 'Test App'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/home'
-      expect(page).to have_content('Test App')
+    before(:each) do
+      visit root_path
     end
 
-    it "should have the right title" do
-      visit '/static_pages/home'
-      expect(page).to have_title("#{base_title} | Home")
-    end
+    it { should have_content('Test App') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
+
   end
 
-  describe "Help Page" do
-    it "should have the content 'Help'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
+  describe "Help page" do
+    before { visit help_path }
 
-    it "should have the right title" do
-      visit '/static_pages/help'
-      expect(page).to have_title("#{base_title} | Help")
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
   describe "About page" do
+    before { visit about_path }
 
-    it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/about'
-      expect(page).to have_title("#{base_title} | About")
-    end
+    it { should have_content('About') }
+    it { should have_title(full_title('About Us')) }
   end
 
   describe "Contact page" do
+    before { visit contact_path }
 
-    it "should have the content 'Contact'" do
-      visit '/static_pages/contact'
-      expect(page).to have_content('Contact')
-    end
-
-    it "should have the title 'Contact'" do
-      visit '/static_pages/contact'
-      expect(page).to have_title("#{base_title} | Contact")
-    end
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
 
 end

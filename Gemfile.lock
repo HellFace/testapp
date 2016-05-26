@@ -34,6 +34,11 @@ GEM
     addressable (2.4.0)
     ansi (1.5.0)
     arel (4.0.2)
+    autoprefixer-rails (6.3.6.1)
+      execjs
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.1.4)
     capybara (2.7.1)
       addressable
@@ -216,6 +221,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   capybara
   childprocess
   coffee-rails (= 4.0.1)
@@ -234,6 +240,7 @@ DEPENDENCIES
   selenium-webdriver
   spork!
   spork-rails
+  sprockets
   sqlite3
   turbolinks
   uglifier (= 2.1.1)
