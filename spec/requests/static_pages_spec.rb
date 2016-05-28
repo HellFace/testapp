@@ -5,9 +5,7 @@ describe "StaticPages" do
   subject { page }
 
   describe "Home Page" do
-    before(:each) do
-      visit root_path
-    end
+    before { visit root_path }
 
     it { should have_content('Test App') }
     it { should have_title(full_title('')) }
@@ -26,7 +24,7 @@ describe "StaticPages" do
     before { visit about_path }
 
     it { should have_content('About') }
-    it { should have_title(full_title('About Us')) }
+    it { should have_title(full_title('About')) }
   end
 
   describe "Contact page" do
